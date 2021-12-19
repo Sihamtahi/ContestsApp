@@ -1,4 +1,4 @@
 # ContestApp
 
-A Flutter application with GetX ecosystem.
+A Flutter application with GetX ecosystem routing.
 

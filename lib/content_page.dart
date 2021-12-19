@@ -13,8 +13,29 @@ class ContentPage extends StatefulWidget {
 }
 
 class _ContentPageState extends State<ContentPage> {
+  List list=[];
+  List  info=[];
+  _readData() async {
+    await DefaultAssetBundle.of(context).loadString("json/recent.json").then((s){
 
+      setState(() {//To notify the UI that the data is loeaded and ready to use.
+        list= json.decode(s);
+      });
+    });
+
+    await DefaultAssetBundle.of(context).loadString("json/detail.json").then((s){
+
+      setState(() {//To notify the UI that the data is loeaded and ready to use.
+        info= json.decode(s);
+      });
+    });
+  }
   @override
+  void initState()
+  {
+    _readData();
+    super.initState();
+  }
   Widget build(BuildContext context) {
     double height=MediaQuery.of(context).size.height;
     double width=MediaQuery.of(context).size.width;
@@ -123,7 +144,7 @@ class _ContentPageState extends State<ContentPage> {
                           borderRadius: BorderRadius.circular(10),
                           color: Color(0xFFfdc33c)
                       ),
-                      child: GestureDetector(
+                      child : GestureDetector(
 
                       ),
                     )
@@ -136,11 +157,12 @@ class _ContentPageState extends State<ContentPage> {
                 height: 220,
                 child: PageView.builder(
                     controller: PageController(viewportFraction: 0.88),
-                    itemCount: 4,
+                    itemCount: info.length,
                     itemBuilder: (_, i){
                       return GestureDetector(
-
-
+                        onTap: (){
+                          Get.toNamed("/detail/");
+                        },
                         child: Container(
                           padding: const EdgeInsets.only(left: 20, top: 20),
                           height: 220,
@@ -156,7 +178,7 @@ class _ContentPageState extends State<ContentPage> {
                                   child:Row(
                                     children: [
                                       Text(
-                                        "Title",
+                                        info[i]['title'],
                                         style: TextStyle(
                                             fontSize: 30,
                                             fontWeight: FontWeight.w500,
@@ -171,7 +193,7 @@ class _ContentPageState extends State<ContentPage> {
                               Container(
                                 width: width,
                                 child: Text(
-                                  "Text",
+                                  info[i]['text'],
                                   style: TextStyle(
                                       fontSize: 20,
                                       color:Color(0xFFb8eefc)
@@ -192,7 +214,7 @@ class _ContentPageState extends State<ContentPage> {
                                             borderRadius: BorderRadius.circular(25),
                                             image: DecorationImage(
                                                 image: AssetImage(
-                                                    "img/background.jpg"
+                                                  info[i]['img'],
                                                 ),
                                                 fit: BoxFit.cover
                                             )
