@@ -1,5 +1,10 @@
 import 'package:first/my_home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+
+import 'content_page.dart';
+import 'my_detail_page.dart';
 
 
 void main() {
@@ -12,12 +17,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      initialRoute: "/",
+      getPages: [
+        GetPage(name: "/", page: ()=> MyHomePage())
+      ],
     );
   }
 }
