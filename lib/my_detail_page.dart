@@ -15,7 +15,15 @@ class DetailPage extends StatefulWidget {
 
 class _DetailPageState extends State<DetailPage> {
 
+  List  imgs=[];
+  _readData() async {
+    await DefaultAssetBundle.of(context).loadString("json/img.json").then((s){
 
+      setState(() {//To notify the UI that the data is loeaded and ready to use.
+        imgs= json.decode(s);
+      });
+    });
+  }
   @override
   Widget build(BuildContext context) {
     double height=MediaQuery.of(context).size.height;
@@ -282,10 +290,10 @@ class _DetailPageState extends State<DetailPage> {
                   )),
               //images
               Stack(
-                  children:[for(int i=0; i<5; i++)
+                  children:[for(int i=0; i<imgs.length; i++)
                     Positioned(
                       top:590,
-                      left: (20+i*35).toDouble(),
+                      left: (20+i*50).toDouble(),
                       width: 50,
                       height: 50,
                       child: Container(
@@ -293,7 +301,7 @@ class _DetailPageState extends State<DetailPage> {
                             borderRadius: BorderRadius.circular(25),
                             image: DecorationImage(
                                 image: AssetImage(
-                                    Get.arguments['img']
+                                  Get.arguments['img']
                                 ),
                                 fit: BoxFit.cover
                             )

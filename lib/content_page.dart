@@ -244,7 +244,7 @@ class _ContentPageState extends State<ContentPage> {
               SizedBox(height: 30,),
               //recent contests
               Container(
-                padding: const EdgeInsets.only(left: 25, right: 25),
+                padding: const EdgeInsets.only(left:25, right: 25),
                 child: Row(
                   children: [
                     Text(
@@ -292,13 +292,13 @@ class _ContentPageState extends State<ContentPage> {
                             return Container(
                               width: width,
                               height: 100,
-                              margin: const EdgeInsets.only(left: 25, right: 25),
+                              margin: const EdgeInsets.only(left: 15, right: 25, bottom: 5 ),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
                                 color:Color(0xFFebf8fd),
                               ),
                               child: Container(
-                                padding: const EdgeInsets.only(left: 20, right: 20),
+                                padding: const EdgeInsets.only(left: 20, right: 20, bottom: 30),
                                 child: Row(
                                   children: [
                                     CircleAvatar(
@@ -316,7 +316,7 @@ class _ContentPageState extends State<ContentPage> {
                                           "Status",
                                           style: TextStyle(
                                               color:Color(0xFFfdebb2),
-                                              fontSize: 12,
+                                              fontSize: 10,
                                               decoration: TextDecoration.none
                                           ),
                                         ),
@@ -368,3 +368,4 @@ class _ContentPageState extends State<ContentPage> {
 
   }
 }
+
