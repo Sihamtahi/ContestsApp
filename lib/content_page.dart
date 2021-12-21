@@ -161,7 +161,16 @@ class _ContentPageState extends State<ContentPage> {
                     itemBuilder: (_, i){
                       return GestureDetector(
                         onTap: (){
-                          Get.toNamed("/detail/");
+                          Get.toNamed("/detail/", arguments: {
+
+                            'title': info[i]['title'].toString(),
+                            'text': info[i]['text'].toString(),
+                            'name': info[i]['name'].toString(),
+                            'img': info[i]['img'].toString(),
+                            'time': info[i]['time'].toString(),
+                            'prize': info[i]['prize'].toString(),
+
+                          });
                         },
                         child: Container(
                           padding: const EdgeInsets.only(left: 20, top: 20),
@@ -283,7 +292,7 @@ class _ContentPageState extends State<ContentPage> {
                             return Container(
                               width: width,
                               height: 100,
-                              margin: const EdgeInsets.only(left: 25, right: 25, bottom: 20),
+                              margin: const EdgeInsets.only(left: 25, right: 25),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
                                 color:Color(0xFFebf8fd),
