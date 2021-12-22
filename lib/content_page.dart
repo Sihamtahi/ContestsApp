@@ -270,11 +270,16 @@ class _ContentPageState extends State<ContentPage> {
                       width: 50,
                       height: 50,
                       decoration: BoxDecoration(
+
                           borderRadius: BorderRadius.circular(10),
-                          color: Color(0xFFfdc33c)
+                          color: Color(0xFFfdc333)
                       ),
                       child: GestureDetector(
+                        onTap: (){
+                          Get.to(()=>RecentContest())
 
+                        },
+                      child: Icon(Icons.arrow_forward_ios, color: Colors.white),
                       ),
                     )
                   ],
@@ -287,7 +292,7 @@ class _ContentPageState extends State<ContentPage> {
                       child: ListView.builder(
                           shrinkWrap: true,
                           scrollDirection: Axis.vertical,
-                          itemCount: 4,
+                          itemCount: list.length,
                           itemBuilder: (_, i){
                             return Container(
                               width: width,
@@ -298,13 +303,13 @@ class _ContentPageState extends State<ContentPage> {
                                 color:Color(0xFFebf8fd),
                               ),
                               child: Container(
-                                padding: const EdgeInsets.only(left: 20, right: 20, bottom: 30),
+                                padding: const EdgeInsets.only(left: 20, right: 20, bottom: 10, top:10),
                                 child: Row(
                                   children: [
                                     CircleAvatar(
                                       radius:40,
                                       backgroundImage: AssetImage(
-                                          "img/background.jpg"
+                                          list[i]['img']
                                       ),
                                     ),
                                     SizedBox(width: 10,),
@@ -313,10 +318,10 @@ class _ContentPageState extends State<ContentPage> {
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          "Status",
+                                          list[i]['status'],
                                           style: TextStyle(
-                                              color:Color(0xFFfdebb2),
-                                              fontSize: 10,
+                                              color:Colors.orangeAccent,
+                                              fontSize: 13,
                                               decoration: TextDecoration.none
                                           ),
                                         ),
@@ -324,11 +329,11 @@ class _ContentPageState extends State<ContentPage> {
                                         SizedBox(
                                           width: 170,
                                           child: Text(
-                                            "Text",
+                                            list[i]['text'],
 
                                             style: TextStyle(
                                                 color:Color(0xFF3b3f42),
-                                                fontSize: 18,
+                                                fontSize: 16,
                                                 decoration: TextDecoration.none
                                             ),
                                           ),
@@ -342,7 +347,7 @@ class _ContentPageState extends State<ContentPage> {
                                       height: 70,
 
                                       child: Text(
-                                        "Time",
+                                        list[i]['time'],
                                         style: TextStyle(
                                             fontSize: 10,
                                             decoration: TextDecoration.none,

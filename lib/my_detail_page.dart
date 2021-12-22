@@ -301,7 +301,7 @@ class _DetailPageState extends State<DetailPage> {
                             borderRadius: BorderRadius.circular(25),
                             image: DecorationImage(
                                 image: AssetImage(
-                                  Get.arguments['img']
+                                  imgs[i]['img']
                                 ),
                                 fit: BoxFit.cover
                             )
