@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:first/detail_controller.dart';
 import 'package:get/get.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +30,8 @@ class _DetailPageState extends State<DetailPage> {
     double height=MediaQuery.of(context).size.height;
     double width=MediaQuery.of(context).size.width;
     int _currentIndex  = 0;
+    //Dependancy ijection
+    final DetailController fav = Get.put(DetailController());
     return
       Scaffold(
         body: Container(
@@ -326,7 +329,9 @@ class _DetailPageState extends State<DetailPage> {
                               borderRadius: BorderRadius.circular(20),
                               color:Color(0xFFfbc33e)
                           ),
-                          child: Icon(Icons.favorite_border,
+                          child: IconButton(
+                              icon: Icon(Icons.favorite_border),
+                              onPressed: ()=> fav.favCounter(),
                               color:Colors.white
                           )
                       ),
