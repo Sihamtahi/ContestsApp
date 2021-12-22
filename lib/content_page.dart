@@ -157,7 +157,7 @@ class _ContentPageState extends State<ContentPage> {
               SizedBox(height: 20,),
               //list
               Container(
-                height: 240,
+                height: 220,
                 child: PageView.builder(
                     controller: PageController(viewportFraction: 0.88),
                     itemCount: info.length,
