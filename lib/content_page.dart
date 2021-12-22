@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:first/recent_contest.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -154,7 +155,7 @@ class _ContentPageState extends State<ContentPage> {
               SizedBox(height: 20,),
               //list
               Container(
-                height: 220,
+                height: 240,
                 child: PageView.builder(
                     controller: PageController(viewportFraction: 0.88),
                     itemCount: info.length,
@@ -276,7 +277,7 @@ class _ContentPageState extends State<ContentPage> {
                       ),
                       child: GestureDetector(
                         onTap: (){
-                          Get.to(()=>RecentContest())
+                          Get.to(()=>RecentContest());
 
                         },
                       child: Icon(Icons.arrow_forward_ios, color: Colors.white),

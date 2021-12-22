@@ -36,7 +36,7 @@ class _DetailPageState extends State<DetailPage> {
           child: Stack(
             children: [
               Positioned(top:50, left:10,child: IconButton(
-                onPressed: ()=>Get.back(), icon: Icon(Icons.arrow_back_ios),
+                onPressed: ()=>Get.to(()=> ContentPage()), icon: Icon(Icons.home_outlined, color: Colors.white),
               )),
               Positioned(
                 top: 120,
