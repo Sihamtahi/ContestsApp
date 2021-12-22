@@ -64,7 +64,7 @@ class _ContentPageState extends State<ContentPage> {
                       CircleAvatar(
                         radius:40,
                         backgroundImage: AssetImage(
-                            "img/background.jpg"
+                            "img/siham.jpg"
                         ),
                       ),
                       SizedBox(width: 10,),
@@ -73,7 +73,7 @@ class _ContentPageState extends State<ContentPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "James Smith",
+                            "Siham TAHI",
                             style: TextStyle(
                                 color:Color(0xFF3b3f42),
                                 fontSize: 18,
@@ -84,8 +84,9 @@ class _ContentPageState extends State<ContentPage> {
                           Text(
                             "Top Level",
                             style: TextStyle(
-                                color:Color(0xFFfdebb2),
-                                fontSize: 12,
+                                color:Colors.orangeAccent,
+                                fontSize: 14,
+
                                 decoration: TextDecoration.none
                             ),
                           ),
@@ -123,12 +124,13 @@ class _ContentPageState extends State<ContentPage> {
                       "Popular Contest",
                       style: TextStyle(
                           color:Color(0xFF1f2326),
-                          fontSize: 20,
+                          fontSize: 25,
+
                           decoration: TextDecoration.none
                       ),
                     ),
                     Expanded(child: Container()),
-                    Text(
+                   /* Text(
                       "Show all",
                       style: TextStyle(
                           color:Color(0xFFcfd5b3),
@@ -148,7 +150,7 @@ class _ContentPageState extends State<ContentPage> {
                       child : GestureDetector(
 
                       ),
-                    )
+                    )*/
                   ],
                 ),
               ),
@@ -190,7 +192,7 @@ class _ContentPageState extends State<ContentPage> {
                                       Text(
                                         info[i]['title'],
                                         style: TextStyle(
-                                            fontSize: 30,
+                                            fontSize: 23,
                                             fontWeight: FontWeight.w500,
                                           color:Colors.white
                                         ),
@@ -205,7 +207,7 @@ class _ContentPageState extends State<ContentPage> {
                                 child: Text(
                                   info[i]['text'],
                                   style: TextStyle(
-                                      fontSize: 20,
+                                      fontSize: 18,
                                       color:Color(0xFFb8eefc)
                                   ),
                                 ),
@@ -252,7 +254,7 @@ class _ContentPageState extends State<ContentPage> {
                       "Recent Contests",
                       style: TextStyle(
                           color:Color(0xFF1f2326),
-                          fontSize: 20,
+                          fontSize: 25,
                           decoration: TextDecoration.none
                       ),
                     ),
